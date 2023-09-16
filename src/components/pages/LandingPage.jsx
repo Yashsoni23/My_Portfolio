@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
-import AsideMenu from "./AsideMenu";
-import SectionTitle from "./SectionTitle";
-import CirLOderSet from "./CirLOderSet";
+import AsideMenu from "../AsideMenu";
+import SectionTitle from "../SectionTitle";
+import CirLOderSet from "../CirLOderSet";
+import WorkCard from "../WorkCard";
 
 import {
   FaFacebookSquare,
@@ -11,12 +12,18 @@ import {
   FaWhatsapp,
   FaEnvelope,
   FaCode,
+  FaPaintBrush,
+  FaDesktop,
+  FaQuoteLeft,
+  FaArrowLeft,
+  FaArrowRight,
+  FaGithub,
 } from "react-icons/fa";
 
 function LandingPage() {
   const [themecolormenu, setThemecolormenu] = useState(false);
 
-  const [theme, settheme] = useState({
+  const [theme, setTheme] = useState({
     ThemTextColor: "text-[#ec1839]",
     ThemBGColor: "bg-[#ec1839]",
     ThemBorderColor:
@@ -25,8 +32,10 @@ function LandingPage() {
 
   const [aboutTab, setAboutTab] = useState(1);
 
-  const setthimecolor = (color) => {
-    settheme({
+  const [work, setWork] = useState("projects");
+
+  const setThimecolor = (color) => {
+    setTheme({
       ThemTextColor: `text-[${color}]`,
       ThemBGColor: `bg-[${color}]`,
       ThemBorderColor: `after:border-[${color}] before:border-[${color}] border-[${color}]`,
@@ -37,7 +46,6 @@ function LandingPage() {
     <div>
       <AsideMenu themeColor={theme} />
       <main>
-      
         {/* ---------------- home section ----------------*/}
         <div className="max-sm:snap-none snap-y snap-mandatory scroll-smooth overflow-y-scroll max-sm:left-0 absolute h-screen left-[19rem] top-0 right-0  text-[#302e4d] bg-[#f2f2fc] ">
           <section
@@ -55,19 +63,19 @@ function LandingPage() {
 
                 <div className="mt-[.6rem] flex justify-between">
                   <div
-                    onClick={() => setthimecolor("#ec1839")}
+                    onClick={() => setTheme("#ec1839")}
                     className=" h-[2.5rem] w-[2.5rem] rounded-full bg-[#ec1839]"
                   ></div>
                   <div
-                    onClick={() => setthimecolor("#ffa500")}
+                    onClick={() => setTheme("#ffa500")}
                     className=" h-[2.5rem] w-[2.5rem] rounded-full bg-[#ffa500]"
                   ></div>
                   <div
-                    onClick={() => setthimecolor("#01a368")}
+                    onClick={() => setTheme("#01a368")}
                     className=" h-[2.5rem] w-[2.5rem] rounded-full bg-[#01a368]"
                   ></div>
                   <div
-                    onClick={() => setthimecolor("#0000ff")}
+                    onClick={() => setTheme("#0000ff")}
                     className=" h-[2.5rem] w-[2.5rem] rounded-full bg-[#0000ff]"
                   ></div>
                 </div>
@@ -132,7 +140,7 @@ function LandingPage() {
                   resume
                 </a>
                 <a
-                  href="#"
+                  href="#about"
                   className={`capitalize py-[.6rem] px-[2rem] text-[1.1rem] rounded-[3rem] font-medium ${theme.ThemBGColor} text-white `}
                 >
                   about me
@@ -198,7 +206,7 @@ function LandingPage() {
                 <li
                   onClick={() => setAboutTab(1)}
                   className={`${
-                    aboutTab == 1 ? "text-[#ec1839]" : ""
+                    aboutTab === 1 ? "text-[#ec1839]" : ""
                   } mb-[1.4rem] block transition-colors duration-300 cursor-pointer`}
                 >
                   <h2 className="w-[11rem] text-[1.7rem] font-medium py-[.2rem] px-[.4rem] border-b-[1.5px] border-[#302e4d] flex">
@@ -208,7 +216,7 @@ function LandingPage() {
                 <li
                   onClick={() => setAboutTab(2)}
                   className={`${
-                    aboutTab == 2 ? "text-[#ec1839]" : ""
+                    aboutTab === 2 ? "text-[#ec1839]" : ""
                   } mb-[1.4rem] block transition-colors duration-300 cursor-pointer`}
                 >
                   <h2 className="w-[11rem] text-[1.7rem] font-medium py-[.2rem] px-[.4rem] border-b-[1.5px] border-[#302e4d] flex">
@@ -218,7 +226,7 @@ function LandingPage() {
                 <li
                   onClick={() => setAboutTab(3)}
                   className={`${
-                    aboutTab == 3 ? "text-[#ec1839]" : ""
+                    aboutTab === 3 ? "text-[#ec1839]" : ""
                   } mb-[1.4rem] block transition-colors duration-300 cursor-pointer`}
                 >
                   <h2 className="w-[11rem] text-[1.7rem] font-medium py-[.2rem] px-[.4rem] border-b-[1.5px] border-[#302e4d] flex">
@@ -228,7 +236,7 @@ function LandingPage() {
                 <li
                   onClick={() => setAboutTab(4)}
                   className={`${
-                    aboutTab == 4 ? "text-[#ec1839]" : ""
+                    aboutTab === 4 ? "text-[#ec1839]" : ""
                   } mb-[1.4rem] block transition-colors duration-300 cursor-pointer`}
                 >
                   <h2 className="w-[11rem] text-[1.7rem] font-medium py-[.2rem] px-[.4rem] border-b-[1.5px] border-[#302e4d] flex">
@@ -238,7 +246,7 @@ function LandingPage() {
                 <li
                   onClick={() => setAboutTab(5)}
                   className={`${
-                    aboutTab == 5 ? "text-[#ec1839]" : ""
+                    aboutTab == +5 ? "text-[#ec1839]" : ""
                   } mb-[1.4rem] block transition-colors duration-300 cursor-pointer`}
                 >
                   <h2 className="w-[11rem] text-[1.7rem] font-medium py-[.2rem] px-[.4rem] border-b-[1.5px] border-[#302e4d] flex">
@@ -253,7 +261,7 @@ function LandingPage() {
           {/* ---------------- service section ----------------*/}
           <section
             id="services"
-            className="snap-start max-sm:h-fit h-screen w-full flex justify-between flex-col py-[2rem] px-[3.5rem] max-sm:px-[2rem]"
+            className=" snap-start max-sm:h-fit h-screen w-full flex justify-between flex-col py-[2rem] px-[3.5rem] max-sm:px-[2rem]"
           >
             <SectionTitle title={"services"} theme={theme} />
 
@@ -262,8 +270,8 @@ function LandingPage() {
                 What I offer
               </h2>
 
-              <div className="flex gap-[5rem] max-sm:gap-[2.5rem] max-sm:flex-col max-sm:pt-[6rem]">
-                <div className="h-[25rem] w-[26rem] bg-[#fdf9ff] p-[2rem] rounded-[1rem] flex justify-between items-center flex-col border-[1px] border-[#e8dfec]">
+              <div className="flex gap-[2.5rem] max-sm:gap-[2.5rem] max-sm:flex-col max-sm:pt-[6rem] ">
+                <div className="h-[24rem] w-[22rem] bg-[#fdf9ff] p-[2rem] rounded-[1rem] flex justify-between items-center flex-col border-[1px] border-[#e8dfec]">
                   <FaCode className="text-[5rem] mt-[2rem] text-[#ec1839]" />
                   <h2 className="text-[2rem] font-semibold">Web development</h2>
                   <p className="text-[1.2rem] ">
@@ -273,9 +281,19 @@ function LandingPage() {
                   </p>
                 </div>
 
-                <div className="h-[25rem] w-[26rem] bg-[#fdf9ff] p-[2rem] rounded-[1rem] flex justify-between items-center flex-col border-[1px] border-[#e8dfec]">
-                  <FaCode className="text-[5rem] mt-[2rem] text-[#ec1839]" />
+                <div className="h-[24rem] w-[22rem] bg-[#fdf9ff] p-[2rem] rounded-[1rem] flex justify-between items-center flex-col border-[1px] border-[#e8dfec]">
+                  <FaDesktop className="text-[4rem] mt-[2rem] text-[#ec1839]" />
                   <h2 className="text-[2rem] font-semibold">Web designe</h2>
+                  <p className="text-[1.2rem] ">
+                    I'm a skilled web developer specializing in creating
+                    immersive online experiences. With a focus on responsive
+                    design and excepti.
+                  </p>
+                </div>
+
+                <div className="h-[24rem] w-[22rem] bg-[#fdf9ff] p-[2rem] rounded-[1rem] flex justify-between items-center flex-col border-[1px] border-[#e8dfec]">
+                  <FaPaintBrush className="text-[4rem] mt-[2rem] text-[#ec1839]" />
+                  <h2 className="text-[2rem] font-semibold">sketching</h2>
                   <p className="text-[1.2rem] ">
                     I'm a skilled web developer specializing in creating
                     immersive online experiences. With a focus on responsive
@@ -286,9 +304,127 @@ function LandingPage() {
             </div>
           </section>
 
+          {/* ---------------- work section ----------------*/}
 
+          <section
+            id="work"
+            className=" snap-start max-sm:h-fit h-screen w-full flex justify-between flex-col py-[2rem] px-[2.5rem] max-sm:px-[2rem]"
+          >
+            <div className="flex items-center justify-between pr-[2rem]">
+              <SectionTitle title={"works"} theme={theme} />
+              <div className="flex gap-[2rem] capitalize text-[1.4rem] font-medium ">
+                <div
+                  onClick={() => setWork("projects")}
+                  className={`${
+                    work === "projects" ? "text-[#ec1839]" : ""
+                  } hover:-translate-y-[2px] duration-300 cursor-pointer`}
+                >
+                  projects
+                </div>
+                <div
+                  onClick={() => setWork("artworks")}
+                  className={`${
+                    work === "artworks" ? "text-[#ec1839]" : ""
+                  } hover:-translate-y-[2px] duration-300 cursor-pointer`}
+                >
+                  artworks
+                </div>
+              </div>
+            </div>
 
+            <div className="flex justify-start flex-wrap gap-[2rem] h-full w-full py-[2rem]">
+              {/* add maximam 8 card */}
+              <WorkCard
+                title={"caffin"}
+                image={"./images/work.jpg"}
+                link={"https://github.com/DhrumitPanchal/caffeine-"}
+              />
+              <WorkCard
+                title={"caffin"}
+                image={"./images/work.jpg"}
+                link={"https://github.com/DhrumitPanchal/caffeine-"}
+              />
+              <WorkCard
+                title={"caffin"}
+                image={"./images/work.jpg"}
+                link={"https://github.com/DhrumitPanchal/caffeine-"}
+              />
+              <WorkCard
+                title={"caffin"}
+                image={"./images/work.jpg"}
+                link={"https://github.com/DhrumitPanchal/caffeine-"}
+              />
+              <WorkCard
+                title={"caffin"}
+                image={"./images/work.jpg"}
+                link={"https://github.com/DhrumitPanchal/caffeine-"}
+              />
+            </div>
+          </section>
 
+          {/* ---------------- testimonials ----------------*/}
+
+          <section className=" snap-start max-sm:h-fit h-screen w-full flex justify-between flex-col py-[2rem] px-[2.5rem] max-sm:px-[2rem]">
+            <div className="mt-[1rem] flex justify-center items-center flex-col ">
+              <h4 className="text-[#ec1839] font-semibold leading-4">
+                My Clients Say
+              </h4>
+              <h1 className="text-[2rem] font-bold">Testimonials</h1>
+            </div>
+
+            <div className="max-sm:mt-[2rem] relative h-full w-full flex justify-center items-center">
+              <div className="h-full flex flex-col justify-center items-center gap-[1.6rem]">
+                <div className="flex flex-col justify-between gap-[1rem] h-[23rem] w-[32rem] max-sm:w-[26rem] p-[2rem] bg-[#fdf9ff] rounded-[.8rem] border-[1px] border-[#e8dfec] ">
+                  <h2 className="text-[2.2rem] text-[#ec1839] ">
+                    <FaQuoteLeft />
+                  </h2>
+                  <div>
+                    <p className="text-[1.1rem]">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quidem recusandae est accusantium sit sed optio maxime ea
+                      repellendus necessitatibus ad! Distinctio cupiditate
+                      impedit doloremque nihil deleniti recusandae quibusdam
+                      blanditiis sunt?
+                    </p>
+                    <div className="mt-[.2rem] text-[1rem] font-semibold">
+                      March 27,2020
+                    </div>
+                  </div>
+
+                  <div className="flex gap-[1.5rem] items-center">
+                    <div className="h-[4rem] w-[4rem] rounded-full bg-slate-300"></div>
+                    <div className="text-[1rem]">
+                      <h2 className="font-bold">Lee Doe</h2>
+                      <h3>Director of a company</h3>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="max-sm:hidden absolute flex justify-between items-center w-[60rem] -translate-y-[1rem] text-[1.5rem] text-[#fdf9ff]">
+                  <div className="flex justify-center items-center h-[2.8rem] w-[4.5rem] bg-[#ec1839] rounded-[1.5rem] ">
+                    {" "}
+                    <FaArrowLeft />{" "}
+                  </div>
+                  <div className="flex justify-center items-center h-[2.8rem] w-[4.5rem] bg-[#ec1839] rounded-[1.5rem] ">
+                    {" "}
+                    <FaArrowRight />{" "}
+                  </div>
+                </div>
+
+                <div className="flex gap-[.6rem]">
+                  <div className="h-[1rem] w-[1rem] rounded-full bg-[#ec1839]"></div>
+                  <div className="h-[1rem] w-[1rem] rounded-full border-[#ec1839] border-[2px] "></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        
+        
+        
+        
+        
+        {/* -----------end----------- */}
         </div>
       </main>
     </div>

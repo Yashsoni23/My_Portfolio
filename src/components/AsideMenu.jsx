@@ -12,6 +12,8 @@ function AsideMenu(props) {
   const [activeSection, setActiveSection] = useState("home");
   const [menuopen, setMenuopen] = useState(false);
   const themeColor = props.themeColor
+
+  
   
   return (
     <aside
@@ -21,7 +23,7 @@ function AsideMenu(props) {
     >
       <div className="logo absolute top-[3.8rem] capitalize ">
         <a
-          href="#"
+          href="#home"
           className={`relative font-[700] py-[1.2rem] px-[1.4rem] text-[2.2rem] tracking-[.2rem] 
       before:content-[""] before:absolute before:w-[1.6rem] before:h-[1.6rem] before:border-b-[.4rem] before:border-l-[.4rem] after:border-[#ec1839] before:border-[#ec1839] before:bottom-0 before:left-0 
       after:content-[""] after:absolute after:w-[1.6rem] after:h-[1.6rem] after:border-t-[.4rem] after:border-r-[.4rem]  after:top-0 after:right-0`}
@@ -104,7 +106,7 @@ function AsideMenu(props) {
           }`}
         >
           <a
-            href="#"
+            href="#work"
             onClick={() => {
               setMenuopen(!menuopen);
               setActiveSection("work");
@@ -121,7 +123,7 @@ function AsideMenu(props) {
           }`}
         >
           <a
-            href="#"
+            href="#contect"
             onClick={() => {
               setMenuopen(!menuopen);
               setActiveSection("contect");
