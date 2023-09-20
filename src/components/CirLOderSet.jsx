@@ -3,6 +3,8 @@ import CirculerLoder from "./CirculerLoder";
 
 function CirLOderSet(props) {
   const tab = props.tab;
+  const mode = props.mode
+
 
   if (tab == 1) {
     return (
@@ -14,6 +16,7 @@ function CirLOderSet(props) {
             per={90}
             img={"./images/html-5.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
           <CirculerLoder
             color={"#264DE4"}
@@ -21,6 +24,7 @@ function CirLOderSet(props) {
             per={85}
             img={"./images/css-3.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
         </div>
         <CirculerLoder
@@ -29,6 +33,7 @@ function CirLOderSet(props) {
           per={80}
           img={"./images/javascript.png"}
           h={"h-[5rem]"}
+          mode = {mode}
         />
       </div>
     );
@@ -44,6 +49,7 @@ function CirLOderSet(props) {
             per={90}
             img={"./images/boostrap.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
           <CirculerLoder
             color={"#38BDF8"}
@@ -51,6 +57,7 @@ function CirLOderSet(props) {
             per={90}
             img={"./images/tailwind.png"}
             h={"h-[4rem]"}
+            mode = {mode}
           />
         </div>
         <CirculerLoder
@@ -59,6 +66,7 @@ function CirLOderSet(props) {
           per={80}
           img={"./images/dotnet.png"}
           h={"h-[5rem]"}
+          mode = {mode}
         />
       </div>
     );
@@ -74,6 +82,7 @@ function CirLOderSet(props) {
             per={75}
             img={"./images/react.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
           <CirculerLoder
             color={"#1169AE"}
@@ -81,6 +90,7 @@ function CirLOderSet(props) {
             per={70}
             img={"./images/jquery.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
         </div>
         <CirculerLoder
@@ -89,6 +99,7 @@ function CirLOderSet(props) {
           per={85}
           img={"./images/nodejs.png"}
           h={"h-[3rem]"}
+          mode = {mode}
         />
       </div>
     );
@@ -104,6 +115,7 @@ function CirLOderSet(props) {
             per={75}
             img={"./images/oracle.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
           <CirculerLoder
             color={"#00618A"}
@@ -111,6 +123,7 @@ function CirLOderSet(props) {
             per={70}
             img={"./images/mysql.png"}
             h={"h-[3rem]"}
+            mode = {mode}
           />
         </div>
         <CirculerLoder
@@ -119,6 +132,7 @@ function CirLOderSet(props) {
           per={0}
           img={"./images/lock.png"}
           h={"h-[5rem]"}
+          mode = {mode}
         />
       </div>
     );
@@ -134,6 +148,7 @@ function CirLOderSet(props) {
             per={90}
             img={"./images/c.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
           <CirculerLoder
             color={"#659AD2"}
@@ -141,6 +156,7 @@ function CirLOderSet(props) {
             per={85}
             img={"./images/c++.png"}
             h={"h-[5rem]"}
+            mode = {mode}
           />
         </div>
         <CirculerLoder
@@ -149,6 +165,7 @@ function CirLOderSet(props) {
           per={45}
           img={"./images/csharp.png"}
           h={"h-[5rem]"}
+          mode = {mode}
         />
       </div>
     );

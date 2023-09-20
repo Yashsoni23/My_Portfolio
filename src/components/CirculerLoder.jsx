@@ -8,12 +8,14 @@ function CirculerLoder(props) {
     const img = props.img;
     const progress = (per*360)/100;
     const h = props.h
+    const {ModeBgColor_900,ModeBgColor_100,ModeBgColor_50,ModeTextColor_900,ModeTextColor_700,ModeBorderColor_50} = props.mode
+
         
   return (
     <>
     <div className="relative h-[16rem] w-[20rem]">
       <div
-        className=" relative h-[13rem] w-[13rem] flex items-center justify-center flex-col rounded-full before:absolute before:h-[9.5rem] before:w-[9.5rem] before:bg-[#f2f2fc] before:rounded-full  shadow-md shadow-black"
+        className={` relative h-[13rem] w-[13rem] flex items-center justify-center flex-col rounded-full  before:absolute before:h-[9.5rem] before:w-[9.5rem] ${ModeBgColor_900} before:rounded-full  shadow-md shadow-black`}
         style={{ background: `conic-gradient(${color} ${progress}deg , #e2e2ec 0deg)` }}
       >
         <img src={img} alt="" className={`z-20 ${h} ` } />
