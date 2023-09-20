@@ -2,7 +2,7 @@ import React from "react";
 
 function SectionTitle({title , theme}) {
   return (
-    <div className=" flex flex-col ">
+    <div className=" flex flex-col mt-[2rem] mb-[2rem]">
       <h2 className="text-[1.7rem] font-extrabold capitalize">{title}</h2>
       <div
         className={`h-[.4rem] w-[6rem] ${theme.ThemBGColor}  rounded-[.4rem]`}

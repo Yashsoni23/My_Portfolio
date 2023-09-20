@@ -158,13 +158,13 @@ useEffect( () => {
             id="home"
             className="snap-start max-sm:h-[93.1vh] h-screen w-full flex justify-between flex-col py-[2rem] px-[3.5rem] max-sm:px-[2rem] "
           >
-            <div className="fixed top-[6rem] right-[1.6rem] flex gap-[1.5rem] z-10 ">
+            <div ref={menuRef} className="fixed top-[6rem] right-[1.6rem] flex gap-[1.5rem] z-10 ">
             
-              <div ref={menuRef}
+              <div 
                 className={` ${
-                  themecolormenu ? "w-[16rem]" : "w-0 hidden"
-                }  relative h-[6.2rem] py-[.7rem] px-[1rem] rounded-[.6rem] ${mode.ModeBgColor_100} before:content-[""] before:absolute
-          before:h-[1.2rem] before:w-[1.2rem] before:-right-[.3rem] before:top-[.7rem] before:rounded-[.1rem] before:rotate-[45deg] before:bg-[#fdf9ff]  shadow-sm shadow-black`}
+                  themecolormenu ? "w-[16.5rem]" : "w-0 hidden"
+                }  relative h-[6.2rem] mt-[4rem] py-[.7rem] px-[1rem] rounded-[.6rem] ${mode.ModeBgColor_100} before:content-[""] before:absolute
+          before:h-[1.2rem] before:w-[1.2rem] before:-right-[.3rem] before:top-[.7rem] before:rounded-[.1rem] before:rotate-[45deg] shadow-sm shadow-black`}
               >
                 <h2 className={`text-[1.1rem] ${mode.ModeTextColor_700}`}>Theme color</h2>
 
@@ -196,13 +196,14 @@ useEffect( () => {
                 onClick={() => setLiteMode(!liteMOde) }
                 className={`flex justify-center items-center h-[2.8rem] w-[2.8rem] rounded-full shadow-sm shadow-black ${mode.ModeBgColor_100}`}
               ><FaSun className={`${theme.ThemTextColor}`}/></div>
-            
               <div
                 onClick={() => setThemecolormenu(!themecolormenu) }
                 className={`flex justify-center items-center h-[2.8rem] w-[2.8rem] rounded-full shadow-sm shadow-black ${mode.ModeBgColor_100}`}
               ><FaPaintBrush className={`${theme.ThemTextColor}`}/></div>
+              
             </div>
             </div>
+            
 
             <div className="flex items-center ">
               <h2 className="inline text-[20px] ">Follow me - </h2>
@@ -270,7 +271,7 @@ useEffect( () => {
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-[2rem]">
+            <div className="flex items-center gap-[2rem] " >
               <a href="#" className="flex items-center">
                 <FaWhatsapp className=" text-[1.4rem]  inline mr-[.4rem] hover:translate-y-[-3px] transition-transform duration-300 " />
                 <h2 className=" text-[1.4rem] ">Whatshapp</h2>
@@ -602,7 +603,7 @@ useEffect( () => {
           >
             <div className="flex justify-center flex-col items-center gap-[.1rem]">
               <h2 className={`text-[2.2rem] ${theme.ThemTextColor} font-bold capitalize `}>
-                SEND ME AN EMAIL
+                SEND ME AN MESSAGES
               </h2>
               <h4 className="text-[1.3rem] font-semibold">
                 I’M VERY RESPONSIVE TO MESSAGES
@@ -614,7 +615,7 @@ useEffect( () => {
                 action=""
                 className="flex flex-col gap-[1rem] px-[2rem] max-sm:px-0"
               >
-                <div className="flex max-sm:flex-col w-full gap-[1.5rem]">
+                <div className="flex max-sm:flex-col w-full gap-[1.5rem] max-sm:gap-[1rem]">
                   <input
                     type="text"
                     placeholder="Name"

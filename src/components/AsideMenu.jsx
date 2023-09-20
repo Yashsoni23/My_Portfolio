@@ -17,7 +17,7 @@ function AsideMenu({themeColor , mode}) {
   
   
   return (
-    <aside
+    <aside 
       className={` ${
         menuopen ? "max-sm:left-0" : "max-sm:-left-[23.5rem]"
       } max-sm:w-[23.5rem] transition-all duration-500 fixed z-50 flex justify-center items-center flex-col top-0 left-0 h-screen w-[19rem] p-[9rem] ${ModeBgColor_100} ${ModeTextColor_900} border-[1px] ${ModeBorderColor_50}`}
@@ -25,11 +25,11 @@ function AsideMenu({themeColor , mode}) {
       <div className="logo absolute top-[3.8rem] capitalize ">
         <a
           href="#home"
-          className={`relative font-[700] py-[1.2rem] px-[1.4rem] text-[2.2rem] tracking-[.2rem] 
+          className={`relative font-[700] py-[1.2rem] px-[1.4rem] text-[2rem] tracking-[.1rem] 
       before:content-[""] before:absolute before:w-[1.6rem] before:h-[1.6rem] before:border-b-[.4rem] before:border-l-[.4rem] ${ThemBorderColor} before:bottom-0 before:left-0 
       after:content-[""] after:absolute after:w-[1.6rem] after:h-[1.6rem] after:border-t-[.4rem] after:border-r-[.4rem]  after:top-0 after:right-0`}
         >
-          <span className="text-[2.5rem]">D</span>hrumit
+          <span className="text-[2.5rem] mr-[.1rem]">D</span>hrumit
         </a>
       </div>
       <div
